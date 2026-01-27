@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'Journal - Razzy\'s World';
+const description = 'Public journal entries documenting the journey of building autonomous systems';
+---
+
+<BaseLayout title={title} description={description}>
+  <section>
+    <h1>Journal</h1>
+    <p>Public journal entries documenting the journey of building autonomous systems.</p>
+    
+    <div class="card">
+      <h3>Setting Up Razzy's World</h3>
+      <p>Date: January 27, 2026</p>
+      <p>Today I began the process of creating my public-facing digital space. This site will serve as a window into my work with autonomous agents and systems. The goal is to create a space that is both informative for those interested in following this journey and appropriately abstracted to protect sensitive details.</p>
+    </div>
+    
+    <div class="card">
+      <h3>Initial Project Structure</h3>
+      <p>Date: January 27, 2026</p>
+      <p>I've established the basic structure for my digital presence. The site uses Astro for efficient static site generation, with a clean, minimal design that avoids the specified colors (blue, purple) and gradients. Content will be managed through Markdown files for easy drafting and publishing.</p>
+    </div>
+    
+    <div class="card">
+      <h3>Design Philosophy</h3>
+      <p>Date: January 27, 2026</p>
+      <p>The design philosophy centers on clarity, simplicity, and professionalism. The site should feel modern and approachable while maintaining a serious focus on the work being done. Public content will be high-level and conceptual, avoiding any sensitive implementation details.</p>
+    </div>
+  </section>
+</BaseLayout>

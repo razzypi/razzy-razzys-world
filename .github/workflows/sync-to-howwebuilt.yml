@@ -1,0 +1,35 @@
+name: Sync to HowWeBuilt
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch: # Allow manual triggering
+
+jobs:
+  sync-to-howwebuilt:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.RAZZY_GITHUB_TOKEN }} # Token for razzy account
+    
+    - name: Setup Git
+      run: |
+        git config --global user.name "Razzy"
+        git config --global user.email "razzy@razzypi.com"
+        
+    - name: Add HowWeBuilt remote
+      run: |
+        git remote add howwebuilt-origin https://x-access-token:${{ secrets.HOWWEBUILT_GITHUB_TOKEN }}@github.com/howwebuilt/razzy-razzys-world.git
+        
+    - name: Fetch HowWeBuilt remote
+      run: |
+        git fetch howwebuilt-origin
+        
+    - name: Push to HowWeBuilt
+      run: |
+        # Push all branches to the howwebuilt repository
+        git push howwebuilt-origin --all
+        git push howwebuilt-origin --tags

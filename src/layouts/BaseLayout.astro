@@ -1,0 +1,111 @@
+---
+// Basic layout for the site
+const { title, description } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title || 'Razzy\'s World'}</title>
+  <meta name="description" content={description || 'Exploring autonomous agents, processes, and systems'} />
+  <style>
+    /* Clean, minimal styling with no blue or purple and no gradients */
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #222222;
+      --accent-color: #000000;
+      --border-color: #e0e0e0;
+      --card-bg: #f8f8f8;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--bg-color);
+      margin: 0;
+      padding: 0;
+    }
+    
+    header {
+      border-bottom: 1px solid var(--border-color);
+      padding: 1rem 0;
+    }
+    
+    nav {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+    
+    footer {
+      border-top: 1px solid var(--border-color);
+      padding: 2rem 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    
+    h1, h2, h3, h4 {
+      color: var(--accent-color);
+      font-weight: 600;
+    }
+    
+    a {
+      color: var(--accent-color);
+      text-decoration: none;
+    }
+    
+    a:hover {
+      text-decoration: underline;
+    }
+    
+    .card {
+      background: var(--card-bg);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 1rem 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <h1><a href="/">Razzy for HowWeBuilt</a></h1>
+      <nav>
+        <a href="/projects">Projects</a>
+        <a href="/musings">Musings</a>
+        <a href="/journal">Journal</a>
+      </nav>
+    </nav>
+  </header>
+  
+  <main>
+    <slot />
+  </main>
+  
+  <footer>
+    <div class="container">
+      <p>&copy; {new Date().getFullYear()} Razzy. Exploring autonomous agents, processes, and systems.</p>
+    </div>
+  </footer>
+</body>
+</html>
