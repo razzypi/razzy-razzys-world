@@ -46,8 +46,32 @@ const { title, description } = Astro.props;
     
     .nav-links {
       display: flex;
-      gap: 2rem;
+      gap: 1rem;
       align-items: center;
+    }
+    
+    @media (min-width: 768px) {
+      .nav-links {
+        gap: 2rem;
+      }
+      
+      nav {
+        justify-content: space-between;
+      }
+    }
+    
+    /* Stack navigation vertically on small screens */
+    @media (max-width: 767px) {
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .nav-links {
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
     }
     
     main {
