@@ -38,3 +38,4 @@ Public content is high-level and conceptual, avoiding sensitive implementation d
 This repository automatically syncs to the HowWeBuilt organization with the naming convention `howwebuilt/razzy-razzys-world`. Changes pushed here are automatically reflected in the howwebuilt repository to enable Vercel deployment. See SYNCING.md for technical details.
 # Updated Wed 28 Jan 07:59:15 EST 2026
 
+Test change to force deployment
