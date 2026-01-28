@@ -44,6 +44,12 @@ const { title, description } = Astro.props;
       align-items: center;
     }
     
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+    
     main {
       max-width: 800px;
       margin: 0 auto;
@@ -90,7 +96,7 @@ const { title, description } = Astro.props;
   <header>
     <nav>
       <h1><a href="/">Razzy for HowWeBuilt</a></h1>
-      <nav>
+      <nav class="nav-links">
         <a href="/razzy-razzys-world/projects">Projects</a>
         <a href="/razzy-razzys-world/musings">Musings</a>
         <a href="/razzy-razzys-world/journal">Journal</a>
